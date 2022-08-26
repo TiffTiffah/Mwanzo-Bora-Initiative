@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&family=Poppins:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    --container-width-lg: 86%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+
+    --transition: all 400ms ease;
+
+}
+body{
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.7;
+    color: #fff;
+    background-color: #fff;
+}
+.container{
+    width: var(--container-width-lg);
+    margin: 0 auto;
+}
+section{
+    text-align:center;
+    
+}
+h1, h2, h3, h4, h5{
+    line-height: 1.2;
+}
+h1{
+    font-size: 2.4rem;
+}
+h2
+{
+    font-size: 2rem;
+
+}
+h3{
+    font-size: 1.6rem;
+}
+h4{
+    font-size: 1.3rem;
+}
+a{
+    color: #033303;
+}
+.btn{
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    font-weight:500;
+    transition: var(--transition);
+}
+.btn:hover{
+    background: #d70070;
+    color: white;
+    border-color: transparent;
+}
+.btn-primary{
+    background:white;
+    color: #033303;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+}
+/* ================================================TOPBAR============================= */
+.top-bar{
+    height: 3rem;
+    background: #d70070;
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+    color: #fff;
+}
+.top-bar .contents{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.top-bar .contacts{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 1rem;
+    
+}
+
+.top-bar .contacts i{
+    font-size: 18px;
+    padding: 0.3rem;
+    color: #28ad66;
+}
+.top-bar .socials{
+    display: flex;
+    align-items: center;
+    gap: 1rem ;
+    ;}
+.top-bar .socials li a{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* ==============================================NAVBAR============================ */
+.navbar{
+    height: 5rem;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 0px 20px rgb(3, 51, 3,.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position:fixed;
+    
+}
+
+/* change the position of the navbar */
+
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+  }
+
+  .affix + .top-bar {
+    padding-top: 70px;
+  }
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav button{
+    display: none;
+}
+
+.navbar .nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 4rem ;
+    
+
+}
+.navbar .nav-menu li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 20px;
+
+}
+.nav-menu a{
+    font-size: 1rem;
+    font-weight: 600;
+    /* white-space: nowrap; */
+    transition: var(--transition);
+}
+
+/* =============submenu============== */
+.dropdown-menu{
+   display: none;
+}
+.navbar ul li:hover  .dropdown-menu{
+    position:absolute;
+    display: block;
+    top: 4.4rem;
+    left: 0;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.dropdown-menu ul li{
+   background: white;
+   line-height: 3rem;
+   width: 11rem;
+}
+
+.nav-menu .dropdown-menu li a:hover{
+    color: #28ad66;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.nav-menu .dropdown-menu li{
+    padding: 0 22px;
+    border-bottom: 1px solid #bbb;
+}
+.nav-menu .dropdown-menu li:last-of-type{
+    border-bottom: transparent;
+}
+.nav-menu .dropdown-menu li a{
+    font-size: 15px;
+}
+
+.nav-menu li .links::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #28ad66;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+
+}
+.nav-menu li .links:hover::after{
+    width: 100%;
+ 
+ }
+ .donate-btn{
+    padding: 10px 20px 20px 25px ;
+    color: #fff;
+    background:#28ad66 ;
+    border-radius: 5px;
+    height: 3.1rem;
+    width: 8rem;
+}
+.donate-btn a{
+    color: #fff;
+}
+
+/* =========================================ABOUT BANNER============================= */
+#about-intro-banner{
+   height: 60vh;
+   background: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.6)),url('/images/children.jpg');
+   background-position: center;
+   background-attachment: fixed;
+   
+}
+#about-intro-banner h1{
+    position: relative;
+   top: 12rem;
+}
+#about-intro-banner .little-nav{
+    padding: 1rem;
+    background: rgb(0, 0, 0,.1);
+    font-size: large;
+    color: #fff;
+    font-weight: bolder;
+    margin-top: 20rem;
+}
+#about-intro-banner .little-nav a{
+    color: #fff;
+}
+#about-intro-banner.little-nav a:hover{
+    color: #28ad66;
+}
+
+/* ============================================ABOUT INFO=========================== */
+#about-info{
+
+    background: whitesmoke;
+    height: 110vh;
+    padding: 0rem 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-info .about-image{
+    background: url('/images/smile.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50vw;
+    height: 80vh;
+  
+   
+}
+
+#about-info  .about-banner{
+   margin-left: -5.5rem;
+   top: 4rem;
+   background: white;    
+   color: #033303;
+   text-align: left;
+   width: 45vw;
+   height: 80vh;
+   padding: 7rem 5rem;
+   position: relative;
+}
+#about-info .about-banner::before{
+    content: "About";
+    position: absolute;
+    color: #d70070;
+    font-size: 8.2rem;
+    font-weight: 900;
+    opacity: .1;
+    top: 0;
+    z-index: 1;
+}
+
+#about-info .about-banner h3{
+    color: #d70070;
+}
+#about-info .about-banner strong{
+    font-size: 1.6rem;
+}
+#about-info  .about-banner p{
+    margin-top: 1.5rem;
+}
+
+/* ========================================who we are======================= */
+#sc-banner-three{
+    color: #033303;
+    background: white;
+    height: 100vh;
+    padding: 3rem 8rem;
+    /* border-bottom: 1px solid rgb(220, 220, 220); */
+}
+#sc-banner-three h2{
+    position: relative;
+}
+#sc-banner-three h2::after{
+    content: "Who We Are";
+    text-align: center;
+    left: 20rem;
+    margin-top: -2rem;
+    position: absolute;
+    color: #d70070;
+    font-size: 6.2rem;
+    font-weight: 900;
+    opacity: .1;
+    top: 0;
+    z-index: 1;
+    
+}
+#sc-banner-three .who-banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0;
+    gap: 1rem;
+
+}
+#sc-banner-three .who-banner .who-info{
+    height: 70vh;
+    width: 50vw;
+    margin-top: 5rem;
+    padding: 2rem 0;
+    height: 70vh;
+    text-align: left;
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    
+}
+#sc-banner-three .who-banner .who-image{
+    height: 70vh;
+    width: 30vw;
+    margin-top: 5rem;
+}
+#sc-banner-three .who-info h3{
+    color: #d70070;
+}
+
+/* =====================================WHAT WE DO============================= */
+#sc-banner-four{
+    color: rgb(3, 51, 3);
+    background: whitesmoke;
+    height: 100vh;
+    padding: 1rem 8rem;
+    gap: 1rem;
+}
+#sc-banner-four .what-we-do-banner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+#sc-banner-four .what-we-do-image{
+    padding: 0 10px;
+    height: 70vh;
+    width: 47vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .4rem;
+}
+#sc-banner-four .image-one{
+    height: 65vh;
+    width: 23vw;
+    background: url(/images/tapwater.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sc-banner-four .other-two{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .4rem;
+}
+#sc-banner-four .image-two{
+    width: 20vw;
+    height: 32vh;
+    background: url(/images/Girls-at-school.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sc-banner-four .image-three{
+    width: 20vw;
+    height: 32vh;
+    background: url(/images/happy-girls.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#sc-banner-four .what-we-do-image .icon{
+    width: 10rem;
+    object-fit: contain;
+   height: 10rem;
+   border-radius: 50%;
+}
+#sc-banner-four .what-we-do-image .icon-one{
+    top: 0;
+}
+#sc-banner-four .what-we-do-image .icon .lord-icon{
+  height: 10rem;
+}
+#sc-banner-four .what-we-do-content{
+    height: 70vh;
+    width: 40vw;
+    text-align: left;
+    padding: 2rem;
+
+}
+#sc-banner-four .what-we-do-content p{
+    margin-top: 1rem;
+}
+#sc-banner-four .what-we-do-content ul{
+    font-weight: bold ;
+    line-height: 2rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+#sc-banner-four .what-we-do-content i{
+    color: #28ad66;
+    font-size: 20px;
+}
+
+
+/* ==================================OUR TEAM====================================== */
+#team{
+    height: 110vh;
+    background: white;
+    padding: 3rem 8rem;
+
+}
+#team h2{
+    position: relative;
+}
+/* #team h2::before{
+    content: 'Our Team';
+    text-align: center;
+    left: 25rem;
+    margin-top: -2rem;
+    position: absolute;
+    color: #d70070;
+    font-size: 6.2rem;
+    font-weight: 900;
+    opacity: .1;
+    top: 0;
+    z-index: 1;
+} */
+
+#team .team-cards{
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    gap: 4rem;
+}
+
+#team .team-cards img{
+ height: 31.25rem;
+ width: 20.5rem;
+  border-radius: .5rem;
+  position: relative;
+}
+#team .tm-card{
+    height: 31.25rem ;
+}
+#team .team-info{
+    height: 5rem;
+    width: 20.5rem;
+    padding: 6px;
+    bottom: 6rem;
+    box-sizing: border-box;
+    position:relative;
+    background: rgb(0, 0, 0,0.1);
+    transition: 300ms ease;
+}
+#team .team-cards ul{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+#team .team-cards ul li i{
+    font-size: 20px;
+    color: white;
+}
+
+#team .tm-card:hover{
+    cursor: pointer;
+}
+#team .tm-card:hover .team-info{
+    border-radius: .5rem;
+    height: 5.5rem;
+    bottom: 6rem;
+    background: #28ad66;
+}
+#team .tm-card:hover img{
+    transform: scale(1.05);
+}
+/* ==================================================footer============================= */
+footer{
+    height: 80vh;
+    background:#d70070;
+} 
+.footer-sec{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    gap: 2rem;
+}
+.footer-sec .footer-logo
+{
+  width: 30vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+}
+
+.footer-sec .footer-logo .ft-logo{
+    padding: 3rem;
+    height: 30vh;
+}
+
+
+.footer-sec .footer-explore
+{
+  width: 20vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  line-height: 3rem;
+
+}
+.footer-sec .footer-explore a{
+    color: #fff;
+    font-weight: bold;
+}
+.footer-sec .footer-explore a:hover{
+    color: #033303;
+    transition: 0.8s ease;
+}
+.footer-sec .footer-contacts
+{
+  width: 20vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  line-height: 2rem;
+
+}
+.footer-sec .footer-contacts ul{
+    margin-top: 1rem;
+}
+.footer-sec .footer-contacts a{
+    color: #fff;
+    font-weight: 400;
+}
+.footer-sec .footer-contacts a:hover{
+    color: #033303;
+    transition: 0.8s ease;
+}
+
+.footer-sec .footer-socials{
+    width: 20vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    line-height: 3rem;
+}
+.footer-sec .footer-socials ul{
+    margin-top: 1rem;
+}
+.footer-sec .footer-socials a{
+    color: #fff;
+    font-weight: 400;
+    font-size: 17px;
+   display: flex;
+   justify-content:left;
+   align-items: center;
+    flex-direction: row;
+
+    position: relative;
+    gap: 1rem;
+}
+.footer-sec .footer-socials a:hover{
+    color: #033303;
+    transition: 0.5s ease;
+}
+.footer-sec .footer-socials i{
+   font-size: 24px;
+}
+footer .footer-bottom{
+    align-items: center;
+text-align: center;
+border-top: 1px solid rgba(255, 2555, 255, 0.2);
+}
