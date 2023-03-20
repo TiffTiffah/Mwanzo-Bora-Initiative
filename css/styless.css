@@ -236,7 +236,7 @@ a{
 /* <!-- ========================================================INTRO=========================================== --> */
 #intro-banner{
     height: 100vh;
-    background-image:linear-gradient(rgb(0, 0, 0,0.4), rgb(0, 0, 0,0.4)), url(/images/Chad_leader.jpg) ;
+    background-image:linear-gradient(rgb(0, 0, 0,0.4), rgb(0, 0, 0,0.4)), url(./images/Chad_leader.jpg) ;
     background-repeat: no-repeat;
     background-size: cover;
 }
