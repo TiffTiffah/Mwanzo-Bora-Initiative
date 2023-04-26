@@ -236,7 +236,7 @@ a{
 /* =========================================ABOUT BANNER============================= */
 #about-intro-banner{
    height: 60vh;
-   background: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.6)),url('/images/children.jpg');
+   background: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.6)),url('images/children.jpg');
    background-position: center;
    background-attachment: fixed;
    
