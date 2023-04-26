@@ -269,7 +269,7 @@ a{
    }
 
 .sc-part-two .about-image{
-    background: url('/images/smile.jpeg');
+    background: url('images/smile.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 50vw;
