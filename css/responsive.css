@@ -1,0 +1,550 @@
+nav { position: relative; }
+.navbar { z-index: 1000; }
+
+/* ============================================================
+   MWANZO BORA INITIATIVE - RESPONSIVE STYLES
+   Mobile-first breakpoints: 480px, 768px, 1024px
+   ============================================================ */
+
+/* ===================== HAMBURGER MENU BUTTON ===================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 1001;
+}
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #033303;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* ===================== MOBILE OVERLAY ===================== */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+.nav-overlay.active {
+    display: block;
+}
+
+/* ===================== LARGE TABLET (max 1024px) ===================== */
+@media (max-width: 1024px) {
+    .navbar .nav-menu {
+        gap: 1.5rem;
+    }
+    .sc-part-two {
+        padding: 0 3rem !important;
+        height: auto !important;
+        min-height: 80vh;
+    }
+    #mission-banner {
+        height: auto !important;
+        padding: 3rem 3rem !important;
+    }
+    #mission-banner .ms-banner {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    #mission-banner .ms-content {
+        width: calc(50% - 1rem) !important;
+        height: auto !important;
+        padding-bottom: 1.5rem;
+    }
+    #sc-part-three {
+        height: auto !important;
+        padding: 3rem 3rem !important;
+    }
+    #sc-part-four {
+        height: auto !important;
+        padding: 3rem 0 !important;
+    }
+    .sc-part-four-contents {
+        margin-left: 3rem !important;
+    }
+    #sc-part-four .events-cards {
+        padding: 0 3rem !important;
+    }
+    footer {
+        height: auto !important;
+    }
+    .footer-sec {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .footer-sec .footer-logo,
+    .footer-sec .footer-explore,
+    .footer-sec .footer-contacts,
+    .footer-sec .footer-socials {
+        width: 45% !important;
+        height: auto !important;
+        min-height: unset;
+    }
+    /* About page */
+    #about-info {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 2rem 3rem !important;
+    }
+    #sc-banner-three .who-banner {
+        flex-direction: column !important;
+        align-items: center;
+    }
+    #sc-banner-four .what-we-do-banner {
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .team-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    /* Contact */
+    #contact-content {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 2rem 3rem !important;
+        gap: 2rem;
+    }
+    #contact-content .message,
+    #contact-content .contacts {
+        width: 100% !important;
+        height: auto !important;
+        border-right: none !important;
+        border-bottom: 1px solid #bbb;
+        padding-bottom: 2rem;
+    }
+}
+
+/* ===================== TABLET / SMALL LAPTOP (max 768px) ===================== */
+@media (max-width: 768px) {
+    /* Top bar */
+    .top-bar {
+        height: auto !important;
+        padding: 0.4rem 0;
+    }
+    .top-bar .contents {
+        flex-direction: column;
+        gap: 0.3rem;
+        align-items: center;
+    }
+    .top-bar .contacts {
+        font-size: 0.8rem;
+        gap: 0.7rem;
+    }
+    .top-bar .socials {
+        gap: 0.7rem;
+    }
+
+    /* Hamburger appears */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Nav menu becomes a slide-in panel */
+    .navbar .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 320px;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 5rem 0 2rem;
+        box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+        z-index: 1000;
+        overflow-y: auto;
+        transition: right 0.35s ease;
+    }
+    .navbar .nav-menu.open {
+        display: flex;
+        right: 0;
+    }
+    .navbar .nav-menu li {
+        width: 100%;
+        padding: 0;
+        border-bottom: 1px solid #eee;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar .nav-menu li > a.links {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    /* Dropdown inside mobile nav */
+    .navbar .nav-menu .dropdown-menu {
+        display: block !important;
+        position: static !important;
+        top: auto !important;
+        width: 100%;
+        background: #f7f7f7;
+    }
+    .navbar .nav-menu .dropdown-menu ul {
+        width: 100%;
+    }
+    .navbar .nav-menu .dropdown-menu ul li {
+        width: 100%;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .navbar .nav-menu .dropdown-menu ul li a {
+        padding: 0.7rem 2.5rem;
+        display: block;
+        font-size: 0.9rem;
+    }
+    /* Hide the underline animation on mobile */
+    .nav-menu li .links::after {
+        display: none;
+    }
+
+    /* Donate button in nav */
+    .donate-btn {
+        display: none;
+    }
+
+    /* Navbar layout */
+    .navbar {
+        padding: 0 1rem !important;
+        position: fixed;
+        z-index: 1000;
+    }
+
+    /* Hero */
+    #intro-banner {
+        height: 70vh !important;
+        background-position: center !important;
+    }
+    .homepage-content-left {
+        left: 1.5rem !important;
+        top: 10rem !important;
+        right: 1.5rem;
+        position: absolute;
+    }
+    .homepage-content-left h2 {
+        font-size: 1.4rem;
+    }
+    .homepage-content-left strong {
+        font-size: 1.8rem !important;
+    }
+    .homepage-content-left p {
+        font-size: 0.9rem;
+    }
+    .homepage-content-left br {
+        display: none;
+    }
+
+    /* About section */
+    .sc-part-two {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 2rem 1.5rem !important;
+    }
+    .sc-part-two .about-image {
+        width: 100% !important;
+        height: 40vw !important;
+        min-height: 200px;
+    }
+    .sc-part-two .about-banner {
+        width: 100% !important;
+        margin-left: 0 !important;
+        height: auto !important;
+        padding: 2rem 1.5rem !important;
+        top: 0 !important;
+    }
+
+    /* Mission */
+    #mission-banner {
+        height: auto !important;
+        padding: 2rem 1.5rem !important;
+    }
+    #mission-banner h1 br {
+        display: none;
+    }
+    #mission-banner .ms-banner {
+        flex-direction: column;
+        align-items: center;
+    }
+    #mission-banner .ms-content {
+        width: 100% !important;
+        height: auto !important;
+        padding-bottom: 1.5rem;
+    }
+
+    /* News */
+    #sc-part-three {
+        height: auto !important;
+        padding: 2rem 1.5rem !important;
+    }
+    #sc-part-three .nw-cards-container {
+        flex-direction: column !important;
+        align-items: center;
+    }
+    #sc-part-three .nw-cards-container .nw-cards {
+        width: 100% !important;
+        height: auto !important;
+    }
+    #sc-part-three .nw-cards .nw-image {
+        height: 220px !important;
+    }
+
+    /* Events */
+    #sc-part-four {
+        height: auto !important;
+        padding: 2rem 0 !important;
+    }
+    .sc-part-four-contents {
+        flex-direction: column !important;
+        margin-left: 1.5rem !important;
+        gap: 1rem !important;
+    }
+    .sc-part-four-contents .sc-part-four-left {
+        border-right: none !important;
+        border-bottom: 2px solid #bbb;
+        padding-right: 0 !important;
+        padding-bottom: 1rem;
+        width: 90%;
+    }
+    #sc-part-four .events-cards {
+        padding: 0 1.5rem !important;
+    }
+    #sc-part-four .ev-cards {
+        flex-direction: column !important;
+        height: auto !important;
+        width: 100% !important;
+    }
+    #sc-part-four .ev-cards .ev-cards-images {
+        width: 100% !important;
+        height: 200px !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+    #sc-part-four .ev-cards .ev-cards-contents {
+        margin-left: 0 !important;
+        padding: 1rem;
+    }
+    #sc-part-four .ev-cards .ev-cards-contents p br {
+        display: none;
+    }
+
+    /* Footer */
+    footer {
+        height: auto !important;
+    }
+    .footer-sec {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+    }
+    .footer-sec .footer-logo,
+    .footer-sec .footer-explore,
+    .footer-sec .footer-contacts,
+    .footer-sec .footer-socials {
+        width: 100% !important;
+        height: auto !important;
+        padding: 1rem 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .footer-bottom {
+        padding: 1rem;
+    }
+
+    /* About page sections */
+    #about-intro-banner {
+        height: 50vh !important;
+        padding: 2rem 1.5rem !important;
+    }
+    #about-info {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 2rem 1.5rem !important;
+    }
+    #about-info .about-image {
+        width: 100% !important;
+        height: 250px !important;
+    }
+    #about-info .about-banner {
+        width: 100% !important;
+        margin-left: 0 !important;
+        height: auto !important;
+        top: 0 !important;
+        padding: 2rem 1.5rem !important;
+    }
+    #sc-banner-three {
+        padding: 2rem 1.5rem !important;
+        height: auto !important;
+    }
+    #sc-banner-three .who-banner {
+        flex-direction: column !important;
+        gap: 1.5rem;
+    }
+    #sc-banner-three .who-info {
+        width: 100% !important;
+    }
+    #sc-banner-three .who-image {
+        width: 100% !important;
+    }
+    #sc-banner-three .who-image img {
+        width: 100%;
+        height: auto;
+    }
+    #sc-banner-four {
+        padding: 2rem 1.5rem !important;
+        height: auto !important;
+    }
+    #sc-banner-four .what-we-do-banner {
+        flex-direction: column !important;
+        gap: 1.5rem;
+    }
+    #sc-banner-four .what-we-do-image {
+        width: 100% !important;
+        flex-direction: column !important;
+    }
+    #sc-banner-four .image-one,
+    #sc-banner-four .image-two,
+    #sc-banner-four .image-three {
+        width: 100% !important;
+        height: 180px !important;
+    }
+    #sc-banner-four .what-we-do-content {
+        width: 100% !important;
+        text-align: left;
+    }
+    #team {
+        padding: 2rem 1.5rem !important;
+        height: auto !important;
+    }
+    .team-cards {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .tm-card {
+        width: 90% !important;
+        max-width: 320px;
+    }
+    .tm-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Contact page */
+    #contact-banner {
+        height: 50vh !important;
+    }
+    #contact-content {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 2rem 1.5rem !important;
+    }
+    #contact-content .message,
+    #contact-content .contacts {
+        width: 100% !important;
+        height: auto !important;
+        border-right: none !important;
+    }
+    #contact-content ul li {
+        margin-left: 0 !important;
+    }
+
+    /* Programs & Blogs */
+    #programs-banner,
+    #blogs-banner {
+        height: 50vh !important;
+    }
+    #programs-content,
+    #projects,
+    #activities,
+    #blogs-content {
+        height: auto !important;
+        padding: 2rem 1.5rem !important;
+    }
+    #programs-content h2::before {
+        display: none;
+    }
+}
+
+/* ===================== SMALL MOBILE (max 480px) ===================== */
+@media (max-width: 480px) {
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.2rem; }
+    h4 { font-size: 1rem; }
+
+    .top-bar {
+        display: none; /* hide top bar on tiny screens to save space */
+    }
+    .navbar {
+        top: 0 !important;
+    }
+    #intro-banner {
+        height: 85vh !important;
+    }
+    .homepage-content-left {
+        top: 6rem !important;
+    }
+    .homepage-content-left strong {
+        font-size: 1.5rem !important;
+    }
+
+    /* Mission icons smaller */
+    #mission-banner .ms-content .ms-image i {
+        font-size: 3rem !important;
+        padding: 1.5rem !important;
+    }
+
+    /* Events */
+    #sc-part-four .ev-cards .ev-cards-images {
+        height: 160px !important;
+    }
+
+    /* Contact form */
+    #contact-content .message form .send {
+        width: 100% !important;
+    }
+
+    /* Footer compact */
+    .footer-sec {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* ===================== UTILITY: remove hard-coded <br> text wrapping on mobile ===================== */
+@media (max-width: 768px) {
+    .sc-part-four-contents .sc-part-four-right p br,
+    #sc-part-three h2 br,
+    #mission-banner h1 br,
+    .ev-cards-contents p br,
+    .nw-content-words p br {
+        display: none;
+    }
+}
